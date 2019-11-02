@@ -1,9 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
+var bodyParser = require('body-parser')
 const server = express();
 
 const db = require("./config/config").mongooseURI
+server.use(bodyParser.json())
 
 mongoose.connect(db ,  {
     useUnifiedTopology: true,
@@ -11,7 +12,6 @@ mongoose.connect(db ,  {
          } )
         .then(() => {console.log("database connected")})
         .catch(err  => console.log(err))
-
 
 server.use("/" , require("./router/studentRouter"));
 

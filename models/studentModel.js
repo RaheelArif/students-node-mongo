@@ -6,13 +6,13 @@ const stundets = new Schema({
         type: String,
         require :true
     } , 
-    rollNumber: {
+    age: {
         type: Number,
     
     }
 
 })
 
-const stundetsModel = mongoose.model("students" , stundets);
+const Stundets = mongoose.model("students" , stundets);
 
-module.exports =stundetsModel;
+module.exports =Stundets;
